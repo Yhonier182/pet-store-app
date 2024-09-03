@@ -49,4 +49,21 @@
     width: 140px;
     height: 140px;
   }
+
+ 
+}
+
+.product-counter{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 12px;
+}
+
+
+.product-soldOut{
+  text-align: center;
+  color: red;
+  font-size: 1em;
+  font-weight: bold;
 }
