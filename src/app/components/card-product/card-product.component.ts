@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-card-product',
@@ -6,18 +6,19 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrl: './card-product.component.scss'
 })
 export class CardProductComponent implements OnInit{
-// creacion del Input que recibe del compoente padre el array de productos
-  @Input() Product = {
+  @Input() product = {
     name: '',
     price: 0,
     description: '',
     inventory: 0,
-    image: ''
+    image: '',
+    cantidad: 0
   };
+	//1. agregar output 
+  @Output() addToCart = new EventEmitter();
   
   cantidad: number = 0;
   soldOut: boolean = false;
-
 
   constructor() { }
 
@@ -25,7 +26,7 @@ export class CardProductComponent implements OnInit{
   }
 
   addProduct() {
-    if(this.cantidad < this.Product.inventory){
+    if(this.cantidad < this.product.inventory){
       this.soldOut = false;
       this.cantidad++;
     } else {
@@ -38,6 +39,14 @@ export class CardProductComponent implements OnInit{
       this.soldOut = false;
       this.cantidad--;
     }
+  }
+
+  addToCartHandler() { //2. crear metodo
+    if(this.cantidad > 0){ //3. validar si tiena una cantidad de producto
+      this.product['cantidad'] = this.cantidad; //4. asigna la cantidad a perdir
+      this.addToCart.emit(this.product); //5. enviar la informacion por el event emiter del output
+    }
+    return null;
   }
 
 }

@@ -1,6 +1,10 @@
 <div class="cards-container">
+
     <div *ngFor="let product of products; let i = index">
-      <app-card-product [Product]="product"></app-card-product>
+      <!-- adicionar el evento que envia el objeto del producto elegido-->
+      <app-card-product [product]="product"
+      (addToCart)="addToCart($event)">
+    </app-card-product>
     </div>
   </div>
   

@@ -1,13 +1,18 @@
 <div class="cards-container">
   <div class="product-card">
-    <img [src]="Product.image" alt="" />
+    <img [src]="product.image" alt="" />
     <div class="product-info">
       <div>
-        <p>${{ Product.price }}</p>
-        <p>{{ Product.name }}</p>
+        <p>${{ product.price }}</p>
+        <p>{{ product.name }}</p>
       </div>
       <figure>
-        <img src="./../../../assets/icons/bt_add_to_cart.svg" alt="" />
+				<!-- agrega el event (click) con el metodo addToCartHandler() -->
+        <img
+          src="./../../../assets/icons/bt_add_to_cart.svg"
+          alt=""
+          (click)="addToCartHandler()"
+        />
       </figure>
     </div>
     <div class="product-counter">
