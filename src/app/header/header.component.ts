@@ -11,6 +11,8 @@ export class HeaderComponent implements OnInit, AfterContentInit, AfterViewInit,
     console.log('1. Primero sucederá esto');
   }
 
+
+  
   ngOnInit(): void {
     console.log('2. Luego esto');
   }
@@ -26,5 +28,7 @@ export class HeaderComponent implements OnInit, AfterContentInit, AfterViewInit,
   ngOnDestroy(): void {
     console.log('5. Finalmente esto (cuando el componente sea destruido)');
   }
+
+  
 
 }

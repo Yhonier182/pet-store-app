@@ -16,6 +16,7 @@ export class CartServicesService {
 
   // Array para almacenar los productos del carrito
   private cart: Product[] = [];
+  
 
   constructor() { }
 
