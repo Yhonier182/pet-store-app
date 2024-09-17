@@ -1,0 +1,18 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+  <div>
+    <label>Correo Electrónico: </label>
+    <input formControlName="email" type="text" placeholder="correo">
+  </div>
+  <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.dirty">
+    <p *ngIf="loginForm.get('email')?.hasError('required')">El correo es requerido</p>
+    <p *ngIf="loginForm.get('email')?.hasError('email')">El correo no es válido</p>
+  </div>
+  <div>
+    <label>Contraseña: </label>
+    <input formControlName="password" type="password" placeholder="contraseña">
+  </div>
+  <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.dirty">
+    <p *ngIf="loginForm.get('password')?.hasError('required')">La contraseña es requerida</p>
+  </div>
+  <button type="submit" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+</form>

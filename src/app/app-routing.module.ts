@@ -8,9 +8,17 @@ import { CatalogoComponent } from './components/catalogo/catalogo.component';
 //importamos el componente llamado about
 import { AboutComponent } from './components/about/about.component';
 
+//importamos el componente llamado login
+import { LoginComponent } from './components/login/login.component';
+
 
 //en este array router incluir el objecto como esta definido  a continuacion
 const routes: Routes = [
+
+  {
+    path:'login',
+    component:LoginComponent
+  },
   {
     path:'catalogo',
     component:CatalogoComponent
@@ -19,6 +27,8 @@ const routes: Routes = [
     path:'about',
     component:AboutComponent
   }
+
+  
 ];
 
 @NgModule({
