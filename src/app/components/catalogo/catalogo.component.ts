@@ -23,8 +23,7 @@ export class CatalogoComponent {
     //para mostrar en el console.log los producto añadidos
     console.log( this.cartServicesService.getCart() )
   }
-
-	//....
+  
   Products = [
     {
     id:1,
@@ -108,14 +107,13 @@ export class CatalogoComponent {
     cantidad: 0
   }, 
   {
-    id:19,
+    id:10,
     name: 'Bike_10',
     price: 120,
     description: 'Product Description',
     inventory: 10,
     image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     cantidad: 0
-  },
-];
+  },];
 
 }
