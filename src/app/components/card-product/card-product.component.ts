@@ -6,6 +6,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrl: './card-product.component.scss'
 })
 export class CardProductComponent implements OnInit{
+
+  
   @Input() product = {
     name: '',
     price: 0,
@@ -45,12 +47,14 @@ export class CardProductComponent implements OnInit{
   }
 
   addToCartHandler() { //2. crear metodo
-    if(this.cantidad > 0){ //3. validar si tiena una cantidad de producto
+    if(this.cantidad >0){ //3. validar si tiena una cantidad de producto
       this.product['cantidad'] = this.cantidad; //4. asigna la cantidad a perdir
       this.addToCart.emit(this.product); //5. enviar la informacion por el event emiter del output
-      this.cantidad =0 ;   // resetea el carrito cuando añado productos al carrito
+      this.cantidad = 0 ;   // resetea el carrito cuando añado productos al carrito
     }
     return null;
   }
+
+  
 
 }
